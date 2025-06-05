@@ -1,0 +1,26 @@
+rules:
+- rule: greetings
+  steps: 
+  - intent: great
+  - action: 
+
+
+- rule: Add products
+  steps:
+  - intent: order_meal
+  - action: action_add_to_order
+  - action: utter_ask_add_more
+
+- rule: Ask to add more product
+  steps:
+    - action: utter_ask_add_more
+    - intent: affirm
+    - action: action_add_to_order
+    - action: utter_ask_add_more
+
+- rule: Finish order
+  steps:
+    - intent: no_add_more
+    - action: action_show_order
+
+

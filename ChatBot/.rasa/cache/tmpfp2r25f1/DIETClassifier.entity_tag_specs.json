@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-order_item",
+      "2": "I-order_item",
+      "3": "L-order_item",
+      "4": "U-order_item",
+      "5": "B-special_request",
+      "6": "I-special_request",
+      "7": "L-special_request",
+      "8": "U-special_request",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-order_item": 1,
+      "I-order_item": 2,
+      "L-order_item": 3,
+      "U-order_item": 4,
+      "B-special_request": 5,
+      "I-special_request": 6,
+      "L-special_request": 7,
+      "U-special_request": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

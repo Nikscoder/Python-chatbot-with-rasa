@@ -1,0 +1,35 @@
+version: "3.1"
+
+stories:
+
+- story: User ask for open hours
+  steps:
+  - intent: check_hours
+  - action: action_check_hours
+
+- story: User ask for menu
+  steps:
+  - intent: menu_list
+  - action: action_list_menu
+
+#- story: Order products
+#  steps:
+#      - intent: order_meal
+#      - action: action_add_to_order
+ #     - action: affirm
+ #     - action: utter_ask_add_more  # Ask if they want to add more items
+
+#- story : Confirm order
+#  steps:
+#      - intent: no_add_more  # User says no to adding more
+#      - action: action_show_order  # Show the summary of the order
+      #- action: action_ask_pickup_or_delivery  # Ask for pick-up or delivery option
+# NOT MINE
+#########################################
+#- story: happy path
+ # steps:
+  #- intent: greet
+  #- action: utter_greet
+  #- intent: mood_great
+  #- action: utter_happy
+

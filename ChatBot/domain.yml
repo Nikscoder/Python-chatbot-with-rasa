@@ -1,0 +1,69 @@
+version: "3.1"
+#responses
+intents:
+  - greet
+  - check_hours
+  - menu_list
+  - order_meal
+  - no_add_more
+  #- confirm_order
+  - goodbye
+  - affirm
+  #- deny
+  - mood_great
+
+entities:
+  - order_item
+  - special_request
+
+slots:
+  order_items:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: custom
+  total_preparation_time:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: total_preparation_time
+  order_item:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: order_item
+  special_request:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: special_request
+  total_cost:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: total_cost
+
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+  utter_ask_add_more:
+    - text: "Would you like to order more ?"
+  #utter_order_summary:
+   # - text: "Your order: {order_items}. Is everything correct ?"
+  #utter_ask_pickup_or_delivery:
+   # - text: "Would you like to pick up your meal from the restaurant or have it delivered?"
+  utter_goodbye:
+  - text: "Bye"
+
+
+actions:
+  - action_check_hours
+  - action_list_menu
+  - action_add_to_order
+  - action_show_order
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

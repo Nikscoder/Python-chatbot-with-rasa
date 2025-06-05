@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  rasa:
+    build: .
+    container_name: rasa_bot
+    platform: linux/amd64
+    ports:
+      - "5005:5005"
+    volumes:
+      - .:/app
+    command: >
+      run --connector slack --enable-api --host 0.0.0.0 --cors "*"
+    networks:
+      - chatbot_network
+
+  action_server:
+    image: rasa/rasa-sdk:latest
+    container_name: action_server
+    volumes:
+      - ./actions:/app/actions
+    ports:
+      - "5055:5055"
+    networks:
+      - chatbot_network
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: ngrok
+    platform: linux/amd64
+    ports:
+      - "4040:4040"
+    volumes:
+      - ./ngrok.yml:/etc/ngrok.yml
+    environment:
+      - NGROK_CONFIG=/etc/ngrok.yml
+    command: ["start", "rasa"]
+    networks:
+      - chatbot_network
+
+networks:
+  chatbot_network:
+    driver: bridge

@@ -1,0 +1,100 @@
+version: "3.1"
+
+nlu:
+- intent: check_hours
+  examples: |
+    - Open hours
+    - Does the restaurant is open on Monday at 10 ?
+    - When the restaurant is open ?
+    - Please provide data and time when the restaurant works
+    - Does the restaurant works on Wednesday at 16 ?
+
+
+- intent: menu_list
+  examples: |
+    - Provide menu
+    - menu
+    - Which dishes do you have ?
+    - What can I order ?
+
+- intent: order_meal
+  examples: |
+    - I would like a [pizza](order_item) without [cheese](special_request)
+    - I would like to order a [hot-dog](order_item)
+    - I'd like to order [pizza](order_item)
+    - I would like to order the [burger](order_item) without [tomato](special_request)
+    - Could I order [pizza](order_item) ?
+    - Can I order [tiramisu](order_item) ?
+    - Could you please prepare a [Spaghetti Carbonara](order_item) for me without [cheese](special_request) ?
+    - I want a [Lasagne](order_item)
+    - Please [burger](order_item)
+    - [pizza](order_item)
+
+#- intent: confirm_order
+ # examples: |
+
+
+# NOT MINE
+#########################################
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    -
+- intent: no_add_more
+  examples: |
+    - no
+    - No
+    - n
+    - that's all
+    - noup
+    - already no
+    - please summarize
+    - summarize
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - ff
